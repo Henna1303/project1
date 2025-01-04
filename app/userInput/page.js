@@ -76,8 +76,8 @@ export default function UserInputPage() {
               onChange={handleInputChange}
               className={styles.input}
               placeholder="e.g. lamp"
-            />xaFGQ5QY723EFGTD5TYD5XE7 X8 C 9B  7
-          </label>3
+            />
+          </label>
           <button type="submit" className={styles.button}>Submit</button>
         </form>
         <div className={styles.divider}>
