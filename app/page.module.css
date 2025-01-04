@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  min-width: 100vw;
+  overflow: hidden;
+}
+
+.heroSection {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  /* border-radius: 10px; */
+  animation: backGroundReveal 0.8s ease-in-out;
+  overflow: hidden; /* Ensures corners are clipped properly */
+}
+
+.heroImage {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  filter: saturate(0%);
+  transition: all 0.5s ease-in-out;
+}
+
+.content {
+  position: absolute;
+  bottom: 8rem;
+  left: 0;
+  z-index: 1;
+  padding: 2rem;
+  color: white;
+  text-shadow: 0.2rem 0.2rem 0.2rem black;
+}
+
+.content h1 {
+  font-size: 5rem;
+  font-family: "Anton", serif;
+  font-weight: 400;
+  margin: 0;
+  position: relative;
+  animation: reveal 0.8s ease-in-out;
+  width: fit-content;
+}
+.content h1:before {
+  content: "";
+  height: 4%;
+  /* width: 100%; */
+  background-color: white;
+  box-shadow: 0 0 0.8rem white;
+  position: absolute;
+  bottom: 0;
+  border-radius: 20px;
+  animation: lineSlide 1.8s linear;
+  overflow: hidden;
+}
+@keyframes lineSlide {
+  0% {
+    width: 0%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 0%;
+    right: 0;
+  }
+}
+
+.content p {
+  width: 60%;
+  font-size: 1.3rem;
+  font-family: "Tsukimi Rounded", serif;
+  font-weight: 400;
+  margin: 1rem 0 0;
+  animation: reveal 0.8s ease-in-out;
+}
+
+.shade {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(360deg, rgba(0, 0, 0, 0.858), rgba(0, 0, 0, 0));
+}
+
+@keyframes reveal {
+  0% {
+    opacity: 0;
+    transform: translateY(4rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes backGroundReveal {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
